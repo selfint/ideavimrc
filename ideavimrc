@@ -1,0 +1,51 @@
+" vim options {{{
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set iskeyword
+set incsearch
+set nohlsearch
+set scrolloff=8
+set showmode
+set showcmd
+set visualbell
+set noerrorbells
+set colorcolumn=80
+" }}}
+
+" ideavim options {{{
+set idearefactormode=select
+set commentary
+set highlightedyank
+set ideajoin
+set ideastatusicon=disabled
+" }}}
+
+" keymap {{{
+" disable keys
+map      <space>    <leader>
+map      s          <nop>
+map      S          <nop>
+map      E          <nop>
+
+" set kemap
+map      <leader>b  <Action>(ToggleLineBreakpoint)
+map      <leader>c  <Action>(Stop)
+map      <leader>ca <Action>(ShowIntentionActions)
+map      <leader>d  <Action>(Debug)
+map      <leader>o  <Action>(FileStructurePopup)
+map      <leader>rn <Action>(RenameElement)
+map      <leader>z  <Action>(ToggleDistractionFreeMode)
+map      <leader>ff <Action>(GotoFile)
+map      Ec         <Action>(IntroduceConstant)
+map      Em         <Action>(ExtractMethod)
+map      Ep         <Action>(IntroduceParameter)
+map      Ev         <Action>(IntroduceVariable)
+map      S          <Action>(EditorUnSelectWord)
+map      s          <Action>(EditorSelectWord)
+nnoremap <leader>%  :source ~/.config/ideavim/ideavimrc<cr>
+nnoremap <leader>,  :edit   ~/.config/ideavim/ideavimrc<cr>
+" }}}
+
+" /* vim:set foldmethod=marker: */
