@@ -11,41 +11,59 @@ set showmode
 set showcmd
 set visualbell
 set noerrorbells
-set colorcolumn=80
+set notimeout
 " }}}
 
 " ideavim options {{{
-set idearefactormode=select
 set commentary
 set highlightedyank
 set ideajoin
-set ideastatusicon=disabled
+set ideamarks
 " }}}
 
 " keymap {{{
+" set leader
+let mapleader = " "
+
 " disable keys
-map      <space>    <leader>
-map      s          <nop>
-map      S          <nop>
 map      E          <nop>
 
 " set kemap
-map      <leader>b  <Action>(ToggleLineBreakpoint)
-map      <leader>c  <Action>(Stop)
-map      <leader>ca <Action>(ShowIntentionActions)
-map      <leader>d  <Action>(Debug)
-map      <leader>o  <Action>(FileStructurePopup)
-map      <leader>rn <Action>(RenameElement)
-map      <leader>z  <Action>(ToggleDistractionFreeMode)
-map      <leader>ff <Action>(GotoFile)
-map      Ec         <Action>(IntroduceConstant)
-map      Em         <Action>(ExtractMethod)
-map      Ep         <Action>(IntroduceParameter)
-map      Ev         <Action>(IntroduceVariable)
-map      S          <Action>(EditorUnSelectWord)
-map      s          <Action>(EditorSelectWord)
+nmap      <leader>b  <Action>(ToggleLineBreakpoint)
+nmap      <leader>c  <Action>(Stop)
+nmap      <leader>ca <Action>(ShowIntentionActions)
+nmap      <leader>d  <Action>(Debug)
+nmap      <leader>o  <Action>(FileStructurePopup)
+nmap      <leader>rn <Action>(RenameElement)
+nmap      <leader>z  <Action>(ToggleDistractionFreeMode)
+nmap      <leader>ff <Action>(Switcher)
+nmap      Ec         <Action>(IntroduceConstant)
+nmap      Em         <Action>(ExtractMethod)
+nmap      Ep         <Action>(IntroduceParameter)
+nmap      Ev         <Action>(IntroduceVariable)
+nmap      Ei         <Action>(Inline)
+nmap      gj         <Action>(EditorUnSelectWord)
+nmap      gk         <Action>(EditorSelectWord)
+nmap      <leader>e  <Action>(ShowErrorDescription)
+nmap      <leader>qf  <Action>(QuickFixes)
+nmap      [e <Action>(GotoNextError)
+nmap      ]e <Action>(GotoPreviousError)
+
+vmap      <leader>ca <Action>(ShowIntentionActions)
+vmap      <leader>rn <Action>(RenameElement)
+vmap      Ec         <Action>(IntroduceConstant)
+vmap      Em         <Action>(ExtractMethod)
+vmap      Ep         <Action>(IntroduceParameter)
+vmap      Ev         <Action>(IntroduceVariable)
+vmap      Ei         <Action>(Inline)
+vmap      gj         <Action>(EditorUnSelectWord)
+vmap      gk         <Action>(EditorSelectWord)
+vmap      <leader>e  <Action>(ShowErrorDescription)
+vmap      <leader>qf  <Action>(QuickFixes)
+
 nnoremap <leader>%  :source ~/.config/ideavim/ideavimrc<cr>
 nnoremap <leader>,  :edit   ~/.config/ideavim/ideavimrc<cr>
+
 " }}}
 
 " /* vim:set foldmethod=marker: */
